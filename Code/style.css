@@ -1,42 +1,84 @@
+/* =========================================
+   1. VARIABLES Y RESET GENERAL
+   ========================================= */
 :root {
-    --primary-blue: #0c2c68;
-    --secondary-blue: #16408f;
-    --text-dark: #333333;
-    --text-light: #f4f4f4;
+    --primary-blue: #0c2c68;       /* Azul Institucional */
+    --secondary-blue: #16408f;     /* Azul Brillante */
+    --text-dark: #333333;          /* Gris Oscuro para textos */
+    --text-light: #666666;         /* Gris Medio */
     --white: #ffffff;
-    --gold-accent: #d4af37; /* Un toque dorado sutil para elegancia */
+    --off-white: #f9f9f9;
+    --gold-accent: #d4af37;        /* Dorado para detalles premium */
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
+    background-color: var(--white);
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Toque clásico notarial */
     color: var(--primary-blue);
+    line-height: 1.3;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: all 0.3s ease;
 }
 
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   2. UTILIDADES DE LAYOUT
+   ========================================= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Navbar */
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title.white {
+    color: var(--white);
+}
+
+.bg-light {
+    background-color: var(--off-white);
+}
+
+.text-left {
+    text-align: left;
+}
+
+/* =========================================
+   3. NAVBAR (Navegación)
+   ========================================= */
 .navbar {
     background-color: var(--primary-blue);
     color: var(--white);
@@ -61,25 +103,25 @@ a {
 
 .nav-links {
     display: flex;
-    list-style: none;
     gap: 2rem;
 }
 
 .nav-links a {
     color: var(--white);
     font-weight: 500;
-    transition: color 0.3s;
+    position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--gold-accent);
 }
 
+/* Botón especial en navbar */
 .btn-contact {
     border: 1px solid var(--white);
     padding: 0.5rem 1.2rem;
     border-radius: 4px;
-    transition: all 0.3s ease;
 }
 
 .btn-contact:hover {
@@ -93,7 +135,10 @@ a {
     cursor: pointer;
 }
 
-/* Hero Section */
+/* =========================================
+   4. HEADERS (Hero y Page Header)
+   ========================================= */
+/* Hero Principal (Index) */
 .hero {
     height: 90vh;
     background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
@@ -106,26 +151,34 @@ a {
     text-align: center;
 }
 
-.hero-overlay {
+/* Header para sub-páginas (Qué Hacemos) */
+.page-header {
+    height: 45vh;
+    background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay, .header-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(rgba(12, 44, 104, 0.8), rgba(12, 44, 104, 0.6));
 }
 
-.hero-content {
+.hero-content, .header-content {
     position: relative;
     z-index: 1;
     color: var(--white);
+    padding: 0 1rem;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-}
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--white); }
+.header-content h1 { font-size: 3rem; margin-bottom: 0.5rem; color: var(--white); }
 
 .btn-primary {
     display: inline-block;
@@ -135,26 +188,17 @@ a {
     border-radius: 5px;
     font-weight: 600;
     margin-top: 2rem;
-    transition: transform 0.3s;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Secciones Generales */
-.section {
-    padding: 5rem 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-/* Sección Labor (Cards) */
+/* =========================================
+   5. SECCIONES GENERALES (Labor, Misión)
+   ========================================= */
+/* Cards Grid (Home) */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -163,7 +207,7 @@ a {
 
 .card {
     background: var(--white);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
@@ -171,38 +215,17 @@ a {
     border-top: 4px solid var(--primary-blue);
 }
 
-.card:hover {
-    transform: translateY(-10px);
-}
+.card:hover { transform: translateY(-10px); }
+.card i { font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem; }
 
-.card i {
-    font-size: 3rem;
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
-}
-
-/* Sección Misión */
-.bg-light {
-    background-color: #f9f9f9;
-}
-
+/* Split Layout (Misión / Pet Friendly) */
 .split-layout {
     display: flex;
     align-items: center;
     gap: 4rem;
 }
 
-.text-block {
-    flex: 1;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.image-block {
-    flex: 1;
-}
+.text-block, .image-block { flex: 1; }
 
 .image-block img {
     width: 100%;
@@ -210,21 +233,106 @@ a {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Sección Contacto */
-/* Ajustes específicos para la sección de teléfonos */
+/* =========================================
+   6. ESTILOS MEJORADOS: "QUÉ HACEMOS"
+   ========================================= */
+   
+/* MEJORA VISUAL: Sección "Nuestra Función" */
+.function-box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: #f4f8fb; /* Azul grisáceo muy pálido */
+    border-left: 6px solid var(--gold-accent); /* Borde elegante */
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    line-height: 1.9;
+    font-weight: 400;
+    text-align: justify; /* Justificado para look formal */
+}
+
+/* Grid de Servicios Detallados */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-blue);
+    transition: all 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--gold-accent);
+}
+
+.service-icon { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem; }
+.service-item h3 { margin-bottom: 1rem; font-size: 1.4rem; }
+
+.service-item ul li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.service-item ul li i {
+    color: var(--gold-accent);
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+/* Pet Friendly Badge */
+.pet-section { background-color: var(--white); }
+
+.pet-badge {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.pet-note { font-size: 0.85rem; color: #888; margin-top: 1rem; font-style: italic; }
+.pet-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+/* =========================================
+   7. SECCIÓN CONTACTO (Teléfonos)
+   ========================================= */
+.contact-section {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
 .contact-split {
     display: flex;
-    justify-content: center; /* Centra los dos elementos */
-    gap: 4rem; /* Espacio entre las dos tarjetas */
+    justify-content: center;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
 .phone-card {
-    background: rgba(255, 255, 255, 0.1); /* Fondo sutil transparente */
+    background: rgba(255, 255, 255, 0.08);
     padding: 2.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 350px; /* Ancho fijo para uniformidad */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 350px;
+    text-align: center;
     transition: transform 0.3s ease, background 0.3s;
 }
 
@@ -233,20 +341,10 @@ a {
     background: rgba(255, 255, 255, 0.15);
 }
 
-.phone-card h3 {
-    color: var(--white);
-    margin-top: 1rem;
-    font-size: 1.5rem;
-}
+.phone-card h3 { color: var(--white); margin-top: 1rem; font-size: 1.5rem; }
+.phone-desc { color: #d0d0d0; font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: 300; }
+.icon-circle i { font-size: 2.5rem; color: var(--gold-accent); }
 
-.phone-desc {
-    color: #211f68;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-}
-
-/* Estilo del número telefónico como botón */
 .phone-number {
     display: inline-block;
     background-color: var(--white);
@@ -255,23 +353,19 @@ a {
     border-radius: 50px;
     font-weight: 700;
     font-size: 1.1rem;
-    text-decoration: none;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
 .phone-number:hover {
-    background-color: var(--gold-accent); /* Usamos el dorado definido antes */
+    background-color: var(--gold-accent);
     color: var(--primary-blue);
     transform: scale(1.05);
 }
 
-.icon-circle i {
-    font-size: 2.5rem;
-    color: var(--gold-accent);
-}
-
-/* Footer */
+/* =========================================
+   8. FOOTER
+   ========================================= */
 footer {
     background-color: #000;
     color: #fff;
@@ -285,13 +379,12 @@ footer {
     align-items: center;
 }
 
-.socials a {
-    color: #fff;
-    margin-left: 1rem;
-    font-size: 1.2rem;
-}
+.socials a { color: #fff; margin-left: 1rem; font-size: 1.2rem; }
+.socials a:hover { color: var(--gold-accent); }
 
-/* RESPONSIVE DESIGN (Media Queries) */
+/* =========================================
+   9. MEDIA QUERIES (Móvil)
+   ========================================= */
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
@@ -307,39 +400,17 @@ footer {
         transition: transform 0.4s ease-in;
     }
 
-    .nav-links.active {
-        transform: translateX(0);
-    }
+    .nav-links.active { transform: translateX(0); }
+    .hamburger { display: block; color: var(--white); }
 
-    .hamburger {
-        display: block;
-        color: var(--white);
-    }
+    .hero-content h1 { font-size: 2.5rem; }
+    .header-content h1 { font-size: 2rem; }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
+    .split-layout { flex-direction: column; gap: 2rem; }
+    .reverse-mobile { flex-direction: column-reverse; }
 
-    .split-layout {
-        flex-direction: column;
-    }
-
-    .contact-info {
-        flex-direction: column;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    /* Ajuste Responsivo para móviles */
-@media (max-width: 768px) {
-    .contact-split {
-        gap: 2rem;
-    }
-    .phone-card {
-        width: 100%; /* En celular ocupan todo el ancho */
-    }
-}
+    .phone-card { width: 100%; }
+    .function-box { padding: 1.5rem; text-align: left; }
+    
+    .footer-content { flex-direction: column; gap: 1rem; }
 }
