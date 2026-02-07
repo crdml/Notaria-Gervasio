@@ -3,301 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiénes Somos - Notaría Cardemil</title>
+    <title>Quiénes Somos - Notaría Gervasio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fa-solid fa-file-signature"></i> NOTARÍA GERVASIO
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="quehacemos.html">¿Qué hacemos?</a></li>
-                <li><a href="quienessomos.html">¿Quiénes somos?</a></li>
-                <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
-                <li><a href="ubicación.html">Ubicación</a></li>
-                <li><a href="fotos.html">Fotos</a></li>
-                <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fa-solid fa-bars"></i>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fa-solid fa-file-signature me-2"></i>NOTARÍA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quehacemos.html">Qué Hacemos</a></li>
+                    <li class="nav-item"><a class="nav-link active gold-text" href="quienessomos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preguntas.html">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ubicación.html">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link" href=".html">Fotos</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light rounded-pill px-4" href="index.html#contacto">Contacto</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <header class="page-header header-team">
+    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
         <div class="header-overlay"></div>
         <div class="container header-content">
-            <h1>Nuestro Equipo</h1>
-            <p>Profesionales comprometidos con la excelencia jurídica.</p>
+            <h1 class="display-4 fw-bold">Nuestro Equipo</h1>
+            <p class="lead">Profesionales comprometidos con la excelencia jurídica.</p>
         </div>
     </header>
 
-    <section class="section">
+    <section class="py-5">
         <div class="container">
-            <div class="notary-profile">
-                <div class="notary-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Francisca Cardemil">
+            <div class="row align-items-center gx-5">
+                <div class="col-md-5 mb-4 mb-md-0 text-center">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid notary-img" alt="Eliana Gabriela Gervasio Zamudio">
                 </div>
-                <div class="notary-bio">
-                    <span class="subtitle">Notario Titular</span>
-                    <h2>Eliana Gabriela Gervasio Zamudio</h2>
-                    <hr class="gold-line">
-                    <p>Abogada de la XX y Notario Público con más de XX años de trayectoria en el servicio judicial.</p>
-                    <p>Su gestión se caracteriza por la modernización de los procesos notariales, combinando la rigurosidad de la fe pública con la agilidad que requieren los tiempos actuales. Comprometida con la transparencia y la cercanía hacia la comunidad de Viña del Mar.</p>
+                <div class="col-md-7">
+                    <span class="text-gold fw-bold text-uppercase ls-2">Notario Titular</span>
+                    <h2 class="display-5 mb-3">Eliana Gabriela Gervasio Zamudio</h2>
+                    <div style="width: 60px; height: 3px; background-color: #d4af37;" class="mb-4"></div>
                     
-                    <div class="credentials">
-                        <div class="credential-item"><i class="fa-solid fa-graduation-cap"></i> Magíster en </div>
-                        <div class="credential-item"><i class="fa-solid fa-scale-balanced"></i> Miembro de </div>
+                    <p class="text-muted">Abogada y Notario Público con una destacada trayectoria en el servicio judicial.</p>
+                    <p class="text-muted">Su gestión se caracteriza por la modernización de los procesos notariales, combinando la rigurosidad de la fe pública con la agilidad que requieren los tiempos actuales. Comprometida con la transparencia y la cercanía hacia la comunidad de Viña del Mar.</p>
+                    
+                    <div class="d-flex gap-4 mt-4 text-muted">
+                        <div><i class="fa-solid fa-graduation-cap text-primary me-2"></i> Magíster en Derecho</div>
+                        <div><i class="fa-solid fa-scale-balanced text-primary me-2"></i> Asoc. de Notarios</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section bg-light">
+    <section class="py-5 bg-light-custom">
         <div class="container">
-            <h2 class="section-title">Nuestro Staff</h2>
-            <p class="text-center team-intro">Conozca al equipo profesional que mantiene nuestra notaría día a día.</p>
+            <h2 class="text-center mb-5">Nuestro Staff</h2>
+            <p class="text-center text-muted mb-5 team-intro">Conozca al equipo profesional que mantiene nuestra notaría día a día.</p>
 
-            <h3 class="team-category">Notarios Suplentes</h3>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogado">
-                    </div>
-                    <div class="member-info">
-                        <h4>Joaquín Mucarquer Pimentel</h4>
-                        <span class="role">Notario suplente</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogada">
-                    </div>
-                    <div class="member-info">
-                        <h4>Cesar Rodolfo Valdivia Fernández</h4>
-                        <span class="role">Notario suplente</span>
+            <h3 class="border-bottom pb-2 mb-4">Notarios Suplentes</h3>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card team-card h-100 p-3 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Joaquín Mucarquer Pimentel</h5>
+                            <p class="card-text small text-muted text-uppercase">Notario Suplente</p>
+                        </div>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Repertorios">
+                <div class="col-md-4">
+                    <div class="card team-card h-100 p-3 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Cesar Rodolfo Valdivia Fernández</h5>
+                            <p class="card-text small text-muted text-uppercase">Notario Suplente</p>
+                        </div>
                     </div>
-                    <div class="member-info">
-                        <h4>Carlos Segundo Arce Cornejo</h4>
-                        <span class="role">Notario Suplente</span>
+                </div>
+                <div class="col-md-4">
+                    <div class="card team-card h-100 p-3 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Carlos Segundo Arce Cornejo</h5>
+                            <p class="card-text small text-muted text-uppercase">Notario Suplente</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <h3 class="team-category">Jefatura Escrituras Públicas</h3>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Secretaria">
-                    </div>
-                    <div class="member-info">
-                        <h4>Ana María Torres Ulzurrun</h4>
-                        <span class="role">Jefa de Escrituras Públicas</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Finanzas">
-                    </div>
-                    <div class="member-info">
-                        <h4>Solange Tamayo Ibarra</h4>
-                        <span class="role">Jefa de Escrituras Públicas</span>
+            <h3 class="border-bottom pb-2 mb-4">Jefatura Escrituras Públicas</h3>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card team-card h-100 p-3 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Ana María Torres Ulzurrun</h5>
+                            <p class="card-text small text-muted text-uppercase">Jefa de Escrituras Públicas</p>
+                        </div>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Archivo">
+                <div class="col-md-4">
+                    <div class="card team-card h-100 p-3 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Solange Tamayo Ibarra</h5>
+                            <p class="card-text small text-muted text-uppercase">Jefa de Escrituras Públicas</p>
+                        </div>
                     </div>
-                    <div class="member-info">
-                        <h4>Sandra Pastenes Montenegro</h4>
-                        <span class="role">Jefa de Escrituras Públicas</span>
+                </div>
+                <div class="col-md-4">
+                    <div class="card team-card h-100 p-3 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Sandra Pastenes Montenegro</h5>
+                            <p class="card-text small text-muted text-uppercase">Jefa de Escrituras Públicas</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <h3 class="team-category">Empleados Escrituras Públicas</h3>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Secretaria">
-                    </div>
-                    <div class="member-info">
-                        <h4>Susana Quinteros Castillo</h4>
+            <h3 class="border-bottom pb-2 mb-4">Empleados Escrituras Públicas</h3>
+            <div class="row g-3 mb-5">
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100">
+                        <h6 class="mb-0 text-dark">Susana Quinteros Castillo</h6>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Secretaria">
-                    </div>
-                    <div class="member-info">
-                        <h4>Paula Cabezas Santibañez</h4>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100">
+                        <h6 class="mb-0 text-dark">Paula Cabezas Santibañez</h6>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Secretaria">
-                    </div>
-                    <div class="member-info">
-                        <h4>Catalina Azua Pedraza</h4>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100">
+                        <h6 class="mb-0 text-dark">Catalina Azua Pedraza</h6>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Secretaria">
-                    </div>
-                    <div class="member-info">
-                        <h4>Brandon Silva Gallegos</h4>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100">
+                        <h6 class="mb-0 text-dark">Brandon Silva Gallegos</h6>
                     </div>
                 </div>
             </div>
-            <h3 class="team-category">Mesón</h3>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogado">
-                    </div>
-                    <div class="member-info">
-                        <h4>Sandra Torres Ulzurrun</h4>
+
+            <h3 class="border-bottom pb-2 mb-4">Mesón</h3>
+            <div class="row g-3 mb-5">
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Sandra Torres Ulzurrun</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Karen Ortiz Vega</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Paula Mancilla Diaz</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Ginelsy Velasco Alarcón</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Katiuska Rangel Aray</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Daniela Aguilera Martinez</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Violeta Pizarro Collao</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Milena Jerez Jimenez</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Susana Jimenez Ibacache</h6></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card team-card p-3 text-center h-100"><h6 class="mb-0 text-dark">Nancy Salas Rozas</h6></div>
+                </div>
+            </div>
+
+            <h3 class="border-bottom pb-2 mb-4">Aseo</h3>
+            <div class="row g-3 mb-5">
+                <div class="col-md-6">
+                    <div class="card team-card p-3 text-center">
+                        <h6 class="mb-0 text-dark">Rossana Ortiz Gálvez</h6>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogada">
-                    </div>
-                    <div class="member-info">
-                        <h4>Karen Ortiz Vega</h4>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Repertorios">
-                    </div>
-                    <div class="member-info">
-                        <h4>Paula Mancilla Diaz</h4>
+                <div class="col-md-6">
+                    <div class="card team-card p-3 text-center">
+                        <h6 class="mb-0 text-dark">Alicia Vidal Valdes</h6>
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogado">
-                    </div>
-                    <div class="member-info">
-                        <h4>Ginelsy Velasco Alarcón</h4>
+
+            <h3 class="border-bottom pb-2 mb-4">Suplentes Ocasionales</h3>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card team-card p-3 text-center">
+                        <h6 class="mb-0 text-dark">Ana María Montenegro Villouta</h6>
                     </div>
                 </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogada">
-                    </div>
-                    <div class="member-info">
-                        <h4>Katiuska Rangel Aray</h4>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Repertorios">
-                    </div>
-                    <div class="member-info">
-                        <h4>Daniela Aguilera Martinez</h4>
+                <div class="col-md-6">
+                    <div class="card team-card p-3 text-center">
+                        <h6 class="mb-0 text-dark">Clarita Villouta Montenegro</h6>
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogado">
-                    </div>
-                    <div class="member-info">
-                        <h4>Violeta Pizarro Collao</h4>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogada">
-                    </div>
-                    <div class="member-info">
-                        <h4>Milena Jerez Jimenez</h4>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Repertorios">
-                    </div>
-                    <div class="member-info">
-                        <h4>Susana Jimenez Ibacache</h4>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Repertorios">
-                    </div>
-                    <div class="member-info">
-                        <h4>Nancy Salas Rozas</h4>
-                    </div>
-                </div>
-            </div>
-            <h3 class="team-category">Aseo</h3>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogado">
-                    </div>
-                    <div class="member-info">
-                        <h4>Rossana Ortiz Gálvez</h4>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogada">
-                    </div>
-                    <div class="member-info">
-                        <h4>Alicia Vidal Valdes</h4>
-                    </div>
-                </div>
-            </div>
-            <h3 class="team-category">Suplentes Ocasionales</h3>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogado">
-                    </div>
-                    <div class="member-info">
-                        <h4>Ana María Montenegro Villouta</h4>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="member-img">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Abogada">
-                    </div>
-                    <div class="member-info">
-                        <h4>Clarita Villouta Montenegro</h4>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
+    <footer class="bg-black text-white py-4 text-center">
+        <div class="container">
             <p>&copy; 2026 Notaría Gervasio. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

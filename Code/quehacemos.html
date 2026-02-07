@@ -3,136 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qué Hacemos</title>
+    <title>Qué Hacemos - Notaría Cardemil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fa-solid fa-file-signature"></i> NOTARÍA GERVASIO
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="quehacemos.html">¿Qué hacemos?</a></li>
-                <li><a href="quienessomos.html">¿Quiénes somos?</a></li>
-                <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
-                <li><a href="ubicación.html">Ubicación</a></li>
-                <li><a href="fotos.html">Fotos</a></li>
-                <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fa-solid fa-bars"></i>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fa-solid fa-file-signature me-2"></i>NOTARÍA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active gold-text" href="quehacemos.html">Qué Hacemos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quienessomos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preguntas.html">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ubicación.html">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link" href=".html">Fotos</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light rounded-pill px-4" href="index.html#contacto">Contacto</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <header class="page-header">
+    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
         <div class="header-overlay"></div>
         <div class="container header-content">
-            <br>
-            <h1>¿Qué hacemos?</h1>
-            <p>Eficiencia y transparencia en cada trámite.</p>
+            <h1 class="display-4 fw-bold">Servicios Notariales</h1>
+            <p class="lead">Eficiencia y transparencia en cada trámite.</p>
         </div>
     </header>
 
-    <section class="section">
+    <section class="py-5">
         <div class="container">
-            <h2 class="section-title">Nuestra Función</h2>
-            
-            <div class="function-box">
-                <p class="lead-text">
-                    Como ministros de fe pública, nuestro rol fundamental es otorgar certeza jurídica a los actos y contratos celebrados entre personas y empresas. 
-                    Custodiamos la legalidad de los documentos, verificamos la identidad de los firmantes y garantizamos que su voluntad sea expresada libre e informadamente.
-                </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="p-5 bg-light-custom rounded border-start border-4 border-warning shadow-sm">
+                        <h2 class="mb-3">Nuestra Función</h2>
+                        <p class="lead text-muted mb-0">Como ministros de fe pública, nuestro rol fundamental es otorgar certeza jurídica a los actos y contratos celebrados entre personas y empresas. Custodiamos la legalidad de los documentos y verificamos la identidad de los firmantes.</p>
+                    </div>
+                </div>
             </div>
-
         </div>
     </section>
 
-    <section class="section">
+    <section class="py-5">
         <div class="container">
-            <h2 class="section-title">¿Y qué hace la Notario?</h2>
-            <div class="function-box">
-                <p class="lead-text">
-                   La Notario es la profesional de Derecho encargada de otorgar fe pública a los actos y contratos. Su principal función es garantizar la legalidad, autenticidad y veracidad de los documentos y actos jurídicos, para que tengan validez ante las autoridades y terceros.
-                </p>
+            <h2 class="text-center mb-5">Trámites Disponibles</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4">
+                        <div class="icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+                        <h4>Bienes Raíces</h4>
+                        <ul class="list-unstyled text-muted mt-3">
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Compraventas</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Arrendamientos</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Promesas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4">
+                        <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                        <h4>Familia</h4>
+                        <ul class="list-unstyled text-muted mt-3">
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Testamentos</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Permisos de viaje</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Mandatos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4">
+                        <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                        <h4>Empresas</h4>
+                        <ul class="list-unstyled text-muted mt-3">
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Sociedades</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Juntas accionistas</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Modificaciones</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card p-4">
+                        <div class="icon-box"><i class="fa-solid fa-car"></i></div>
+                        <h4>Vehículos</h4>
+                        <ul class="list-unstyled text-muted mt-3">
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Transferencias</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Declaraciones</li>
+                            <li><i class="fa-solid fa-check text-gold me-2"></i> Poderes</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section bg-light">
+    <section class="py-5 bg-white">
         <div class="container">
-            <h2 class="section-title">Documentos y Trámites</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                    <h3>Bienes Raíces</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Compraventas</li>
-                        <li><i class="fa-solid fa-check"></i> Arrendamientos</li>
-                        <li><i class="fa-solid fa-check"></i> Promesas de compraventa</li>
-                    </ul>
+            <div class="row align-items-center">
+                <div class="col-md-6 order-2 order-md-1">
+                    <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-3">
+                        <i class="fa-solid fa-paw me-1"></i> Espacio Amigable
+                    </span>
+                    <h2>Somos Pet Friendly</h2>
+                    <p class="text-muted mt-3">En Notaría Cardemil, no necesita dejar a su compañero fuera. Nuestras oficinas están habilitadas para recibir mascotas educadas.</p>
+                    <p class="small text-muted fst-italic">*Se solicita uso de correa en todo momento.</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon"><i class="fa-solid fa-users"></i></div>
-                    <h3>Familia y Personas</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Testamentos</li>
-                        <li><i class="fa-solid fa-check"></i> Autorizaciones de viaje</li>
-                        <li><i class="fa-solid fa-check"></i> Mandatos generales y especiales</li>
-                    </ul>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
-                    <h3>Empresas</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Constitución de sociedades</li>
-                        <li><i class="fa-solid fa-check"></i> Modificaciones societarias</li>
-                        <li><i class="fa-solid fa-check"></i> Juntas de accionistas</li>
-                    </ul>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon"><i class="fa-solid fa-car"></i></div>
-                    <h3>Vehículos</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Transferencias de vehículos</li>
-                        <li><i class="fa-solid fa-check"></i> Declaraciones juradas</li>
-                        <li><i class="fa-solid fa-check"></i> Cartas de poder</li>
-                    </ul>
+                <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow" alt="Pet Friendly">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section pet-section">
-        <div class="container split-layout reverse-mobile">
-            <div class="text-block">
-                <div class="pet-badge"><i class="fa-solid fa-paw"></i> Espacio Amigable</div>
-                <h2 class="section-title text-left">Somos Pet Friendly</h2>
-                <p>Entendemos que su mascota es parte de su familia y es por eso que En Notaría Gervasio, es un esapcio inclusivo y accesible para todos.</p>
-                <br>
-                <p>Reconociendo la importancia de la compañía animal en la vida de muchas personas, contamos un entorno amigable para mascotas, donde clientes pueden contar con la presencia de sus mascotas.</p>
-                <br>
-                <p>Este compromiso refleja nuestra filosofía de crear un ambiente acogedor y respetuoso para todos, asegurando que quienes nos visitan puedan sentirse cómodos y tranquilos en un espacio que fomente tanto el bienestar humano como el animal.</p>
-                <br>
-                <p class="pet-note"><em>*Se solicita uso de correa en todo momento.</em></p>
-            </div>
-            <div class="image-block">
-                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Perro en oficina notaria" class="pet-img">
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 Notaría Gervasio. Todos los derechos reservados.</p>
+    <footer class="bg-black text-white py-4 text-center">
+        <div class="container">
+            <p>&copy; 2026 Notaría Cardemil. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
