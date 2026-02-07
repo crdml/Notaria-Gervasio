@@ -1,0 +1,345 @@
+:root {
+    --primary-blue: #0c2c68;
+    --secondary-blue: #16408f;
+    --text-dark: #333333;
+    --text-light: #f4f4f4;
+    --white: #ffffff;
+    --gold-accent: #d4af37; /* Un toque dorado sutil para elegancia */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-blue);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold-accent);
+}
+
+.btn-contact {
+    border: 1px solid var(--white);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--white);
+    color: var(--primary-blue) !important;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(12, 44, 104, 0.8), rgba(12, 44, 104, 0.6));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 2rem;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+/* Secciones Generales */
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Sección Labor (Cards) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+    border-top: 4px solid var(--primary-blue);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Sección Misión */
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.text-block {
+    flex: 1;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.image-block {
+    flex: 1;
+}
+
+.image-block img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Sección Contacto */
+/* Ajustes específicos para la sección de teléfonos */
+.contact-split {
+    display: flex;
+    justify-content: center; /* Centra los dos elementos */
+    gap: 4rem; /* Espacio entre las dos tarjetas */
+    flex-wrap: wrap;
+}
+
+.phone-card {
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil transparente */
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 350px; /* Ancho fijo para uniformidad */
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.phone-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.phone-card h3 {
+    color: var(--white);
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.phone-desc {
+    color: #211f68;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+/* Estilo del número telefónico como botón */
+.phone-number {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.phone-number:hover {
+    background-color: var(--gold-accent); /* Usamos el dorado definido antes */
+    color: var(--primary-blue);
+    transform: scale(1.05);
+}
+
+.icon-circle i {
+    font-size: 2.5rem;
+    color: var(--gold-accent);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials a {
+    color: #fff;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+/* RESPONSIVE DESIGN (Media Queries) */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--primary-blue);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+        color: var(--white);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .split-layout {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Ajuste Responsivo para móviles */
+@media (max-width: 768px) {
+    .contact-split {
+        gap: 2rem;
+    }
+    .phone-card {
+        width: 100%; /* En celular ocupan todo el ancho */
+    }
+}
+}
