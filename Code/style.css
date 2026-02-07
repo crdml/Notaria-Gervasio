@@ -4,11 +4,12 @@
 :root {
     --primary-blue: #0c2c68;       /* Azul Institucional */
     --secondary-blue: #16408f;     /* Azul Brillante */
-    --text-dark: #333333;          /* Gris Oscuro para textos */
-    --text-light: #666666;         /* Gris Medio */
+    --text-dark: #333333;          /* Texto principal */
+    --text-light: #666666;         /* Texto secundario */
     --white: #ffffff;
-    --off-white: #f9f9f9;
-    --gold-accent: #d4af37;        /* Dorado para detalles premium */
+    --off-white: #f8f9fa;
+    --gold-accent: #d4af37;        /* Dorado Premium */
+    --border-radius: 8px;
 }
 
 * {
@@ -28,8 +29,8 @@ body {
     background-color: var(--white);
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif; /* Toque clásico notarial */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
     color: var(--primary-blue);
     line-height: 1.3;
 }
@@ -40,12 +41,11 @@ a {
     transition: all 0.3s ease;
 }
 
-ul {
-    list-style: none;
-}
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
 
 /* =========================================
-   2. UTILIDADES DE LAYOUT
+   2. LAYOUT Y UTILIDADES
    ========================================= */
 .container {
     max-width: 1200px;
@@ -53,9 +53,10 @@ ul {
     padding: 0 20px;
 }
 
-.section {
-    padding: 5rem 0;
-}
+.section { padding: 5rem 0; }
+.bg-light { background-color: var(--off-white); }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
 
 .section-title {
     text-align: center;
@@ -64,20 +65,10 @@ ul {
     position: relative;
 }
 
-.section-title.white {
-    color: var(--white);
-}
-
-.bg-light {
-    background-color: var(--off-white);
-}
-
-.text-left {
-    text-align: left;
-}
+.section-title.white { color: var(--white); }
 
 /* =========================================
-   3. NAVBAR (Navegación)
+   3. NAVBAR
    ========================================= */
 .navbar {
     background-color: var(--primary-blue);
@@ -86,7 +77,7 @@ ul {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .nav-container {
@@ -101,23 +92,18 @@ ul {
     letter-spacing: 1px;
 }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
+.nav-links { display: flex; gap: 2rem; }
 
 .nav-links a {
     color: var(--white);
     font-weight: 500;
-    position: relative;
+    font-size: 0.95rem;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--gold-accent);
 }
 
-/* Botón especial en navbar */
 .btn-contact {
     border: 1px solid var(--white);
     padding: 0.5rem 1.2rem;
@@ -136,27 +122,30 @@ ul {
 }
 
 /* =========================================
-   4. HEADERS (Hero y Page Header)
+   4. HEADERS (Hero y Page Headers)
    ========================================= */
-/* Hero Principal (Index) */
+/* Hero Index */
 .hero {
     height: 90vh;
     background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
-/* Header para sub-páginas (Qué Hacemos) */
+/* Header General (Qué Hacemos) */
 .page-header {
     height: 45vh;
     background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
+}
+
+/* Header Específico (Quiénes Somos) */
+.header-team {
+    background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+}
+
+.hero, .page-header {
     position: relative;
     display: flex;
     align-items: center;
@@ -167,7 +156,7 @@ ul {
 .hero-overlay, .header-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(12, 44, 104, 0.8), rgba(12, 44, 104, 0.6));
+    background: linear-gradient(rgba(12, 44, 104, 0.85), rgba(12, 44, 104, 0.65));
 }
 
 .hero-content, .header-content {
@@ -177,8 +166,8 @@ ul {
     padding: 0 1rem;
 }
 
-.hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--white); }
-.header-content h1 { font-size: 3rem; margin-bottom: 0.5rem; color: var(--white); }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.header-content h1 { font-size: 3rem; margin-bottom: 0.5rem; }
 
 .btn-primary {
     display: inline-block;
@@ -196,9 +185,8 @@ ul {
 }
 
 /* =========================================
-   5. SECCIONES GENERALES (Labor, Misión)
+   5. COMPONENTES HOME (Cards & Misión)
    ========================================= */
-/* Cards Grid (Home) */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -208,7 +196,7 @@ ul {
 .card {
     background: var(--white);
     padding: 2.5rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
     transition: transform 0.3s;
@@ -218,32 +206,19 @@ ul {
 .card:hover { transform: translateY(-10px); }
 .card i { font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem; }
 
-/* Split Layout (Misión / Pet Friendly) */
-.split-layout {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-
+.split-layout { display: flex; align-items: center; gap: 4rem; }
 .text-block, .image-block { flex: 1; }
-
-.image-block img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+.image-block img { width: 100%; border-radius: var(--border-radius); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
 /* =========================================
-   6. ESTILOS MEJORADOS: "QUÉ HACEMOS"
+   6. COMPONENTES "QUÉ HACEMOS"
    ========================================= */
-   
-/* MEJORA VISUAL: Sección "Nuestra Función" */
 .function-box {
     max-width: 900px;
     margin: 0 auto;
     padding: 3rem;
-    background-color: #f4f8fb; /* Azul grisáceo muy pálido */
-    border-left: 6px solid var(--gold-accent); /* Borde elegante */
+    background-color: #f4f8fb;
+    border-left: 6px solid var(--gold-accent);
     border-radius: 0 10px 10px 0;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
@@ -253,10 +228,9 @@ ul {
     color: var(--text-dark);
     line-height: 1.9;
     font-weight: 400;
-    text-align: justify; /* Justificado para look formal */
+    text-align: justify;
 }
 
-/* Grid de Servicios Detallados */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -266,65 +240,129 @@ ul {
 .service-item {
     background: var(--white);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     border-left: 5px solid var(--primary-blue);
     transition: all 0.3s;
 }
 
-.service-item:hover {
-    transform: translateY(-5px);
-    border-left-color: var(--gold-accent);
-}
-
+.service-item:hover { transform: translateY(-5px); border-left-color: var(--gold-accent); }
 .service-icon { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem; }
-.service-item h3 { margin-bottom: 1rem; font-size: 1.4rem; }
+.service-item ul li { margin-bottom: 0.8rem; display: flex; align-items: center; font-size: 0.95rem; color: var(--text-light); }
+.service-item ul li i { color: var(--gold-accent); margin-right: 10px; font-size: 0.8rem; }
 
-.service-item ul li {
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    font-size: 0.95rem;
-    color: var(--text-light);
-}
-
-.service-item ul li i {
-    color: var(--gold-accent);
-    margin-right: 10px;
-    font-size: 0.8rem;
-}
-
-/* Pet Friendly Badge */
+/* Pet Friendly */
 .pet-section { background-color: var(--white); }
-
-.pet-badge {
-    display: inline-block;
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
+.pet-badge { display: inline-block; background-color: #e8f5e9; color: #2e7d32; padding: 0.5rem 1rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; }
 .pet-note { font-size: 0.85rem; color: #888; margin-top: 1rem; font-style: italic; }
 .pet-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
 
 /* =========================================
-   7. SECCIÓN CONTACTO (Teléfonos)
+   7. COMPONENTES "QUIÉNES SOMOS" (Nuevos)
    ========================================= */
-.contact-section {
-    background-color: var(--primary-blue);
-    color: var(--white);
+/* Perfil Notario */
+.notary-profile {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background-color: var(--white);
 }
 
-.contact-split {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
+.notary-image { flex: 0 0 40%; }
+.notary-image img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 20px 20px 0px var(--primary-blue); /* Efecto gráfico moderno */
 }
+
+.notary-bio { flex: 1; }
+.notary-bio .subtitle {
+    display: block;
+    text-transform: uppercase;
+    color: var(--gold-accent);
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+.notary-bio h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+.gold-line {
+    border: 0;
+    height: 3px;
+    width: 60px;
+    background-color: var(--gold-accent);
+    margin-bottom: 1.5rem;
+}
+
+.credentials {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+.credential-item i { color: var(--primary-blue); font-size: 1.2rem; }
+
+/* Grid del Equipo */
+.team-intro { max-width: 700px; margin: 0 auto 3rem auto; color: var(--text-light); }
+
+.team-category {
+    font-size: 1.8rem;
+    margin: 3rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    display: inline-block;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.team-card:hover { transform: translateY(-7px); }
+
+.member-img {
+    height: 220px;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-card:hover .member-img img { transform: scale(1.05); }
+
+.member-info { padding: 1.2rem; }
+.member-info h4 { font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--primary-blue); }
+.member-info .role { font-size: 0.85rem; color: var(--text-light); font-weight: 500; text-transform: uppercase; }
+
+/* =========================================
+   8. CONTACTO TELEFÓNICO
+   ========================================= */
+.contact-section { background-color: var(--primary-blue); color: var(--white); }
+.contact-split { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
 
 .phone-card {
     background: rgba(255, 255, 255, 0.08);
@@ -335,12 +373,7 @@ ul {
     text-align: center;
     transition: transform 0.3s ease, background 0.3s;
 }
-
-.phone-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-}
-
+.phone-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.15); }
 .phone-card h3 { color: var(--white); margin-top: 1rem; font-size: 1.5rem; }
 .phone-desc { color: #d0d0d0; font-size: 0.9rem; margin-bottom: 1.5rem; font-weight: 300; }
 .icon-circle i { font-size: 2.5rem; color: var(--gold-accent); }
@@ -356,61 +389,35 @@ ul {
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
-
-.phone-number:hover {
-    background-color: var(--gold-accent);
-    color: var(--primary-blue);
-    transform: scale(1.05);
-}
+.phone-number:hover { background-color: var(--gold-accent); transform: scale(1.05); }
 
 /* =========================================
-   8. FOOTER
+   9. FOOTER
    ========================================= */
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+footer { background-color: #000; color: #fff; padding: 2rem 0; text-align: center; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; }
 .socials a { color: #fff; margin-left: 1rem; font-size: 1.2rem; }
-.socials a:hover { color: var(--gold-accent); }
 
 /* =========================================
-   9. MEDIA QUERIES (Móvil)
+   10. MEDIA QUERIES (Móvil)
    ========================================= */
 @media (max-width: 768px) {
     .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        height: 100vh;
-        width: 100%;
+        position: absolute; top: 60px; right: 0;
+        height: 100vh; width: 100%;
         background-color: var(--primary-blue);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(100%);
-        transition: transform 0.4s ease-in;
+        flex-direction: column; align-items: center; justify-content: center;
+        transform: translateX(100%); transition: transform 0.4s ease-in;
     }
-
     .nav-links.active { transform: translateX(0); }
     .hamburger { display: block; color: var(--white); }
 
-    .hero-content h1 { font-size: 2.5rem; }
-    .header-content h1 { font-size: 2rem; }
-
-    .split-layout { flex-direction: column; gap: 2rem; }
+    .split-layout, .notary-profile { flex-direction: column; gap: 2rem; }
     .reverse-mobile { flex-direction: column-reverse; }
-
+    .notary-image { width: 100%; }
+    .notary-image img { box-shadow: 10px 10px 0px var(--primary-blue); }
     .phone-card { width: 100%; }
-    .function-box { padding: 1.5rem; text-align: left; }
-    
     .footer-content { flex-direction: column; gap: 1rem; }
+    .function-box { padding: 1.5rem; }
+    .credentials { flex-direction: column; gap: 1rem; }
 }
