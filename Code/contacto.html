@@ -1,11 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto - Notaría Gervasio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Pestaña INACTIVA (Ahora se ve azul oscuro) */
+        .nav-tabs .nav-link {
+            color: #0c2c68 !important; /* Azul corporativo forzado */
+            font-weight: 600;
+            background-color: #f8f9fa; /* Fondo gris muy suave para diferenciar */
+            border: 1px solid #dee2e6;
+            margin-right: 4px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Efecto al pasar el mouse */
+        .nav-tabs .nav-link:hover {
+            color: #d4af37 !important; /* Texto dorado al pasar mouse */
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+
+        /* Pestaña ACTIVA (Seleccionada) */
+        .nav-tabs .nav-link.active {
+            color: #d4af37 !important; /* Texto Dorado */
+            background-color: #fff;     /* Fondo Blanco */
+            border-color: #dee2e6 #dee2e6 #fff; /* Borde inferior invisible para unir con la tarjeta */
+            border-top: 3px solid #d4af37; /* Borde superior dorado elegante */
+        }
+    </style>
 </head>
 <body>
-    <h5>Contacto Notaría Gervasio</h5>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="index.html">
+                <i class="fa-solid fa-file-signature me-2"></i>NOTARÍA GERVASIO
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quehacemos.html">Qué Hacemos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quienessomos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preguntas.html">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ubicación.html">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fotos.html">Fotos</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-light text-primary fw-bold rounded-pill px-4 ms-2" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+        <div class="header-overlay"></div>
+        <div class="container header-content">
+            <h1 class="display-4 fw-bold font-playfair">Contáctenos</h1>
+            <p class="lead">Estamos aquí para resolver sus dudas y recibir sus comentarios.</p>
+        </div>
+    </header>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-5">
+                
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <div class="card-body">
+                            
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-selected="true">
+                                        <i class="fa-regular fa-envelope me-2"></i>Consulta General
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="oirs-tab" data-bs-toggle="tab" data-bs-target="#oirs" type="button" role="tab" aria-selected="false">
+                                        <i class="fa-solid fa-bullhorn me-2"></i>Reclamos y Sugerencias
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+                                
+                                <div class="tab-pane fade show active" id="general" role="tabpanel">
+                                    <h4 class="font-playfair mb-3 text-primary">Envíenos un mensaje</h4>
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="nombre" placeholder="Su Nombre">
+                                                    <label for="nombre">Nombre Completo</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                                    <label for="email">Correo Electrónico</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <select class="form-select" id="asunto">
+                                                        <option selected>Consulta General</option>
+                                                        <option value="1">Escrituras Públicas</option>
+                                                        <option value="2">Vehículos</option>
+                                                        <option value="3">Autorizaciones</option>
+                                                    </select>
+                                                    <label for="asunto">Asunto</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" placeholder="Mensaje" id="mensaje" style="height: 120px"></textarea>
+                                                    <label for="mensaje">Su Mensaje</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <button class="btn btn-primary w-100 py-3 fw-bold" type="submit" style="background-color: #0c2c68; border-color: #0c2c68;">
+                                                    Enviar Consulta
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="tab-pane fade" id="oirs" role="tabpanel">
+                                    <h4 class="font-playfair mb-3 text-primary">Libro de Sugerencias y Reclamos</h4>
+                                    <div class="alert alert-light border small text-muted mb-3">
+                                        <i class="fa-solid fa-circle-info me-2 text-gold"></i>
+                                        Su opinión es vital para mejorar nuestra atención. Este mensaje será derivado directamente a la administración.
+                                    </div>
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <select class="form-select border-2 border-warning" id="tipo_oirs">
+                                                        <option selected value="Sugerencia">Sugerencia</option>
+                                                        <option value="Reclamo">Reclamo</option>
+                                                        <option value="Felicitacion">Felicitación</option>
+                                                    </select>
+                                                    <label for="tipo_oirs">Tipo de Solicitud</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="nombre_oirs" placeholder="Nombre">
+                                                    <label>Nombre Completo</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="rut_oirs" placeholder="RUT">
+                                                    <label>RUT (Opcional)</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="tel" class="form-control" id="tel_oirs" placeholder="Teléfono">
+                                                    <label>Teléfono</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="email_oirs" placeholder="Email">
+                                                    <label>Correo Electrónico</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" placeholder="Detalle" id="mensaje_oirs" style="height: 120px"></textarea>
+                                                    <label>Detalle de su solicitud</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <button class="btn btn-warning text-white w-100 py-3 fw-bold" type="submit" style="background-color: #d4af37; border-color: #d4af37;">
+                                                    Enviar Comentario
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div> </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="h-100 p-4 rounded-3 text-white" style="background-color: #0c2c68;">
+                        <h3 class="font-playfair mb-4 text-white">Información de Contacto</h3>
+                        <p class="mb-5 opacity-75">Si prefiere una atención más directa, puede utilizar nuestros canales oficiales o visitarnos en nuestras dependencias.</p>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fa-solid fa-location-dot fs-4 text-gold me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold">Ubicación</h5>
+                                <p class="mb-0 opacity-75">Calle Arlegui 537<br>Viña del Mar, Valparaíso</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fa-solid fa-phone fs-4 text-gold me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold">Llámenos</h5>
+                                <p class="mb-0"><a href="tel:+56322680456" class="text-white text-decoration-none opacity-75 hover-gold">Mesa Central: +56 32 268 0456</a></p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fa-solid fa-envelope fs-4 text-gold me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold">Escríbanos</h5>
+                                <p class="mb-0"><a href="mailto:contacto@notariagervasio.cl" class="text-white text-decoration-none opacity-75 hover-gold">contacto@notariagervasio.cl</a></p>
+                            </div>
+                        </div>
+
+                        <hr class="my-5 border-white opacity-25">
+
+                        <h5 class="fw-bold mb-3">Horario de Atención</h5>
+                        <ul class="list-unstyled opacity-75">
+                            <li class="d-flex justify-content-between mb-2">
+                                <span>Lunes - Viernes:</span>
+                                <span>08:45 - 18:00</span>
+                            </li>
+                            <li class="d-flex justify-content-between text-gold">
+                                <span>Sábados y Domingos:</span>
+                                <span>Cerrado</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5 font-playfair text-primary">Enlaces de Utilidad</h2>
+            
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-6 col-lg-3">
+                    <a href="https://www.registrocivil.cl" target="_blank" class="text-decoration-none">
+                        <div class="card h-100 service-card text-center p-4">
+                            <i class="fa-solid fa-id-card fs-1 text-gold mb-3"></i>
+                            <h5 class="text-dark">Registro Civil</h5>
+                            <p class="text-muted small mb-0">Certificados y trámites de identidad.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <a href="https://homer.sii.cl" target="_blank" class="text-decoration-none">
+                        <div class="card h-100 service-card text-center p-4">
+                            <i class="fa-solid fa-file-invoice-dollar fs-1 text-gold mb-3"></i>
+                            <h5 class="text-dark">SII</h5>
+                            <p class="text-muted small mb-0">Avalúos fiscales y situación tributaria.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <a href="https://www.pjud.cl" target="_blank" class="text-decoration-none">
+                        <div class="card h-100 service-card text-center p-4">
+                            <i class="fa-solid fa-scale-balanced fs-1 text-gold mb-3"></i>
+                            <h5 class="text-dark">Poder Judicial</h5>
+                            <p class="text-muted small mb-0">Consulta de causas y estado diario.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <a href="https://www.tgr.cl" target="_blank" class="text-decoration-none">
+                        <div class="card h-100 service-card text-center p-4">
+                            <i class="fa-solid fa-landmark fs-1 text-gold mb-3"></i>
+                            <h5 class="text-dark">Tesorería General</h5>
+                            <p class="text-muted small mb-0">Pago de contribuciones y certificados.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-4 text-center">
+        <div class="container">
+            <p>&copy; 2026 Notaría Gervasio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
