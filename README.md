@@ -4,9 +4,6 @@
 
 Plataforma web informativa y de contacto desarrollada para la **Notaría Gervasio** en Viña del Mar. Este proyecto moderniza la presencia digital de la notaría, ofreciendo a los usuarios acceso rápido a información sobre trámites, ubicación, horarios y canales de atención.
 
-![Preview del Sitio](https://via.placeholder.com/800x400?text=Vista+Previa+Notaria+Gervasio)
-*(Puedes reemplazar este link con una captura real de tu sitio más adelante)*
-
 ---
 
 ## 🚀 Características Principales
