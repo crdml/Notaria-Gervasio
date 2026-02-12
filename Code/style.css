@@ -125,3 +125,17 @@ a { text-decoration: none; }
 /* Utilidades de texto */
 .text-gold { color: var(--gold-accent) !important; }
 .bg-light-custom { background-color: #f8f9fa; }
+
+/* --- ESTILOS PARA EL LOGO OIRS (INDEX) --- */
+.oirs-logo {
+    width: 150px; /* Tamaño controlado del logo */
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    filter: grayscale(20%); /* Un poco gris para que al pasar el mouse brille */
+}
+
+.oirs-logo:hover {
+    transform: scale(1.1); /* Crece un poco */
+    filter: grayscale(0%) drop-shadow(0 4px 10px rgba(212, 175, 55, 0.4)); /* Brillo dorado */
+}
