@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Francisca Cardemil"> <meta name="copyright" content="Ingeniera Informática Independiente">
     <title>Inicio</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -22,11 +23,11 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav gap-2 align-items-center">
-                    <li class="nav-item"><a class="nav-link active gold-text" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="quehacemos.html">Qué Hacemos</a></li>
                     <li class="nav-item"><a class="nav-link" href="quienessomos.html">Quiénes Somos</a></li>
                     <li class="nav-item"><a class="nav-link" href="preguntas.html">Preguntas Frecuentes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ubicaciOn.html">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ubicacion.html">Ubicación</a></li>
                     <li class="nav-item"><a class="nav-link" href="fotos.html">Fotos</a></li>
                     <li class="nav-item">
                         <a class="btn btn-outline-light rounded-pill px-4 ms-2" href="contacto.html">Contacto</a>
@@ -39,35 +40,73 @@
     <header class="page-header home-hero" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
         <div class="header-overlay"></div>
         <div class="container header-content">
-            <h1 class="display-3 fw-bold mb-3">Seguridad Jurídica & Confianza</h1>
+            <h1 class="display-3 fw-bold mb-3 font-playfair">Seguridad Jurídica & Confianza</h1>
             <p class="lead mb-4">Brindamos certeza legal con un enfoque moderno, ágil y profesional.</p>
-            <a href="quehacemos.html" class="btn btn-primary-custom">Conoce nuestros servicios</a>
+            <a href="quehacemos.html" class="btn btn-corporate-gold btn-lg px-5 py-3 rounded-pill text-uppercase" style="font-size: 0.9rem;">Conoce nuestros servicios</a>
         </div>
     </header>
 
+    <section class="py-5 bg-white border-bottom">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                
+                <div class="col-md-5 divider-vertical mb-4 mb-md-0">
+                    <span class="text-gold fw-bold text-uppercase ls-2 small">Trámite Rápido</span>
+                    <h3 class="font-playfair text-primary mb-3">Validación de Documentos</h3>
+                    <p class="text-muted mb-4 px-lg-4 small">
+                        ¿Necesita verificar la autenticidad de un documento? Pinche el sello para ir al validador oficial.
+                    </p>
+                    
+                    <a href="#seccion-validador" title="Ir al Validador">
+                        <img src="assets/logoweb2.png" 
+                             alt="Ir a Validar" 
+                             class="action-logo">
+                    </a>
+                    <p class="small text-muted fst-italic mt-2"><i class="fa-solid fa-arrow-down text-gold"></i> Validar ahora</p>
+                </div>
+
+                <div class="col-md-5 mt-4 mt-md-0">
+                    <span class="text-gold fw-bold text-uppercase ls-2 small">Mejora Continua</span>
+                    <h3 class="font-playfair text-primary mb-3">Sugerencias y Reclamos</h3>
+                    <p class="text-muted mb-4 px-lg-4 small">
+                        Su opinión es fundamental. Si desea dejar una felicitación o reclamo, pinche el sello para acceder al formulario.
+                    </p>
+                    
+                    <a href="contacto.html" title="Ir al formulario OIRS">
+                        <img src="assets/logoweb2.png" 
+                             alt="Ir a Contacto" 
+                             class="action-logo">
+                    </a>
+                    <p class="small text-muted fst-italic mt-2"><i class="fa-solid fa-arrow-right text-gold"></i> Ir a formulario</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Nuestra Labor</h2>
+            <h2 class="text-center mb-5 font-playfair text-primary">Nuestra Labor</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box"><i class="fa-solid fa-pen-nib"></i></div>
-                        <h3>Escrituración</h3>
-                        <p class="text-muted">Nuestro trabajo se centra en prestar servicios jurídicos a nuestra distinguida clientela, quiénes llevan confiando en Notaría Gervasio por 39 años.</p>
+                        <h3>Escrituras</h3>
+                        <p class="text-muted">Redacción y legalización de compraventas, sociedades y mandatos con rigurosidad.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box"><i class="fa-solid fa-stamp"></i></div>
-                        <h3>Asesoramiento</h3>
-                        <p class="text-muted">Hacemos asesorías e impartimos confianza a nuestros clientes en cuanto a actos notariales.</p>
+                        <h3>Legalizaciones</h3>
+                        <p class="text-muted">Autorización de firmas y fotocopias con rapidez para sus trámites diarios.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card service-card p-4 text-center">
                         <div class="icon-box"><i class="fa-solid fa-house-user"></i></div>
-                        <h3>Eficiencia</h3>
-                        <p class="text-muted">Contamos con toma de firmas a domicilio en las comunas de Viña del Mar y Concón.</p>
+                        <h3>Transferencias</h3>
+                        <p class="text-muted">Gestión integral para transferencias de vehículos y bienes raíces.</p>
                     </div>
                 </div>
             </div>
@@ -78,8 +117,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <h2>Nuestra Misión</h2>
-                    <p class="text-muted">Nuestra misión es entregar un servicio de calidad, rápido y eficiente, manteniendo la confianza de nuestros clientes y aplicando la moralidad en cada momento.</p>
+                    <h2 class="font-playfair text-primary mb-3">Nuestra Misión</h2>
+                    <p class="text-muted">Garantizar la seguridad jurídica a través de un servicio de fe pública basado en la ética, la transparencia y la eficiencia tecnológica.</p>
+                    <p class="text-muted">Nos esforzamos por modernizar la experiencia notarial, reduciendo tiempos de espera y acercando la legalidad a las personas.</p>
                 </div>
                 <div class="col-md-6">
                     <img src="assets/entrada.png" class="img-fluid rounded shadow" alt="Oficina">
@@ -88,17 +128,62 @@
         </div>
     </section>
 
+    <section id="seccion-validador" class="py-5 position-relative" style="background-color: #f9f9f9;">
+        <div class="container position-relative" style="z-index: 1;">
+            
+            <div class="text-center mb-5">
+                <span class="text-gold fw-bold text-uppercase ls-2 small">Sistema Interconectado</span>
+                <h2 class="font-playfair text-primary">Validador Fojas.cl</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-11">
+                    
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-4 bg-corporate-blue text-white p-4 p-lg-5 d-flex flex-column justify-content-center text-center">
+                                <div class="mb-4">
+                                    <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm" style="width: 80px; height: 80px; opacity: 0.9;">
+                                        <i class="fa-solid fa-qrcode text-primary fs-1"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-playfair fw-bold mb-3">Zona Segura</h3>
+                                <p class="small opacity-75 mb-0">Verifique aquí la vigencia y autenticidad de escrituras y documentos.</p>
+                            </div>
+
+                            <div class="col-md-8 bg-white">
+                                <div class="d-flex align-items-center justify-content-between px-4 py-2 border-bottom bg-light">
+                                    <span class="fw-bold text-primary small text-uppercase"><i class="fa-solid fa-server text-gold me-2"></i>Buscador Oficial</span>
+                                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill"><i class="fa-solid fa-lock me-1"></i> Seguro</span>
+                                </div>
+                                <div class="ratio" style="--bs-aspect-ratio: 75%; min-height: 550px;">
+                                    <iframe 
+                                        src="https://www.fojas.cl/?motv=vista_descarga_web&cons_sel=not_gervasio" 
+                                        style="border:none; width: 100%; height: 100%;"
+                                        allowfullscreen
+                                        title="Ventana de Validación Fojas.cl">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contacto" class="contact-section py-5 text-center">
         <div class="container">
-            <h2 class="mb-5">Canales de Atención Telefónica</h2>
+            <h2 class="mb-5 font-playfair">Canales de Atención Telefónica</h2>
             <div class="row justify-content-center g-4">
                 <div class="col-md-5 col-lg-4">
                     <div class="border border-light rounded p-4 h-100 hover-effect">
                         <i class="fa-solid fa-file-signature fa-3x text-gold mb-3"></i>
                         <h3>Escrituras Públicas</h3>
-                        <p class="small opacity-75">Escrituras Públicas.</p>
-                        <a href="tel:+56322123456" class="btn btn-light rounded-pill fw-bold text-primary px-4 mt-2">
-                            <i class="fa-solid fa-phone me-2"></i> +56 32 218 6916
+                        <p class="small opacity-75">Consultas sobre sociedades y mandatos.</p>
+                        <a href="tel:+56322680457" class="btn btn-light rounded-pill fw-bold text-primary px-4 mt-2">
+                            <i class="fa-solid fa-phone me-2"></i> +56 32 268 0457
                         </a>
                     </div>
                 </div>
@@ -106,9 +191,9 @@
                     <div class="border border-light rounded p-4 h-100 hover-effect">
                         <i class="fa-solid fa-users fa-3x text-gold mb-3"></i>
                         <h3>Atención Mesón</h3>
-                        <p class="small opacity-75">Atención mesón.</p>
-                        <a href="tel:+56322123457" class="btn btn-light rounded-pill fw-bold text-primary px-4 mt-2">
-                            <i class="fa-solid fa-phone me-2"></i> +56 32 218 6918
+                        <p class="small opacity-75">Legalizaciones y retiro de documentos.</p>
+                        <a href="tel:+56322680456" class="btn btn-light rounded-pill fw-bold text-primary px-4 mt-2">
+                            <i class="fa-solid fa-phone me-2"></i> +56 32 268 0456
                         </a>
                     </div>
                 </div>
@@ -116,35 +201,9 @@
         </div>
     </section>
 
-    </section>
-
-    <section class="py-5 bg-white border-top">
-        <div class="container text-center">
-            
-            <span class="text-gold fw-bold text-uppercase ls-2 small">Mejora Continua</span>
-            <h2 class="font-playfair text-primary mb-3">Consultas, Reclamos y Sugerencias</h2>
-            
-            <p class="text-muted mb-4 mx-auto" style="max-width: 700px;">
-                Su experiencia es fundamental para nosotros. Si desea dejar una felicitación, estampar un reclamo o hacernos una sugerencia, le invitamos a hacer clic en nuestro escudo notarial a continuación para acceder al formulario oficial.
-            </p>
-
-            <div class="mb-3">
-                <a href="contacto.html" title="Ir al formulario de Reclamos y Sugerencias">
-                    <img src="assets/logoweb2.png" alt="Sello Notaría Gervasio" class="oirs-logo">
-                </a>
-            </div>
-
-            <p class="small text-muted fst-italic">
-                <i class="fa-solid fa-arrow-pointer me-1 text-gold"></i> Haga clic en el sello para ingresar
-            </p>
-
-        </div>
-    </section>
-
-    <footer class="bg-black text-white py-4 text-center">
     <footer class="bg-black text-white py-4 text-center">
         <div class="container">
-            <p>&copy; 2026 Notaría Gervasio. Todos los derechos reservados.</p>
+            <p class="mb-0">&copy; 2026 Notaría Gervasio. Todos los derechos reservados.</p>
         </div>
     </footer>
 

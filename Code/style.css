@@ -1,46 +1,134 @@
-/* =========================================
-   STYLE.CSS - VERSIÓN BOOTSTRAP MASTER
-   ========================================= */
 :root {
-    --primary-blue: #0c2c68;
-    --secondary-blue: #16408f;
-    --gold-accent: #d4af37;
-    --text-dark: #333;
+    /* --- PALETA DE COLORES OFICIAL --- */
+    --notary-blue: #0a2558;       /* Azul Marino Profundo (Navy) */
+    --notary-gold: #d4af37;       /* Dorado Metálico */
+    --notary-gold-dark: #b3922d;  /* Dorado Oscuro (Hover) */
+    --text-dark: #2c3e50;         /* Gris Oscuro para textos */
+    --bg-light: #f8f9fa;          /* Fondo Claro */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
-    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .font-playfair, .navbar-brand {
+/* =========================================
+   1. TIPOGRAFÍA Y ENCABEZADOS
+   ========================================= */
+h1, h2, h3, h4, h5, .font-playfair, .navbar-brand {
     font-family: 'Playfair Display', serif;
-    color: var(--primary-blue);
+    color: var(--notary-blue); /* Por defecto, todos los títulos son Azules */
 }
 
-a { text-decoration: none; }
+a { text-decoration: none; color: var(--notary-blue); transition: 0.3s; }
+a:hover { color: var(--notary-gold); }
 
-/* --- NAVBAR --- */
+/* =========================================
+   2. SOBREESCRIBIR BOOTSTRAP (Colores Corporativos)
+   ========================================= */
+
+.text-primary { color: var(--notary-blue) !important; }
+.bg-primary { background-color: var(--notary-blue) !important; }
+.border-primary { border-color: var(--notary-blue) !important; }
+
+.btn-primary {
+    background-color: var(--notary-blue) !important;
+    border-color: var(--notary-blue) !important;
+}
+.btn-primary:hover {
+    background-color: #06183d !important; /* Más oscuro al pasar mouse */
+}
+
+/* =========================================
+   3. UTILIDADES Y CLASES CORPORATIVAS
+   ========================================= */
+
+/* Fondo Azul Corporativo (Para tarjetas y secciones) */
+.bg-corporate-blue {
+    background-color: var(--notary-blue) !important;
+    color: white !important;
+}
+
+/* Dorado */
+.text-gold { color: var(--notary-gold) !important; }
+.bg-gold { background-color: var(--notary-gold) !important; }
+
+/* Botón Dorado (Ej: Validar, Enviar) */
+.btn-corporate-gold {
+    background-color: var(--notary-gold) !important;
+    border-color: var(--notary-gold) !important;
+    color: white !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.btn-corporate-gold:hover {
+    background-color: var(--notary-gold-dark) !important;
+    border-color: var(--notary-gold-dark) !important;
+    transform: translateY(-2px);
+}
+
+/* Inputs con borde dorado (Formularios) */
+.form-control-gold:focus, 
+.form-control:focus {
+    border-color: var(--notary-gold) !important;
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
+}
+
+/* =========================================
+   4. CORRECCIONES DE CONTRASTE (La solución al problema)
+   ========================================= */
+
+.bg-corporate-blue h1,
+.bg-corporate-blue h2,
+.bg-corporate-blue h3,
+.bg-corporate-blue h4,
+.bg-corporate-blue h5,
+.bg-corporate-blue .font-playfair,
+.bg-corporate-blue p,
+.bg-corporate-blue a,
+.bg-corporate-blue div {
+    color: #ffffff !important;
+}
+
+/* Excepción: Los íconos dorados dentro de lo azul se mantienen dorados */
+.bg-corporate-blue .text-gold {
+    color: var(--notary-gold) !important;
+}
+
+/* Enlaces dentro de cajas azules */
+.bg-corporate-blue a {
+    text-decoration: underline;
+    text-decoration-color: var(--notary-gold);
+    opacity: 0.95;
+}
+.bg-corporate-blue a:hover {
+    color: var(--notary-gold) !important;
+    opacity: 1;
+}
+
+/* Texto blanco forzado */
+.text-white { color: #ffffff !important; }
+
+/* =========================================
+   5. COMPONENTES DEL SITIO
+   ========================================= */
+
+/* Navbar */
 .custom-navbar {
-    background-color: var(--primary-blue);
+    background-color: var(--notary-blue) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     padding: 1rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+.navbar-brand { color: white !important; }
+.nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 500; }
+.nav-link:hover, .nav-link.active { color: var(--notary-gold) !important; }
 
-.nav-link {
-    color: rgba(255,255,255,0.8) !important;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--gold-accent) !important;
-}
-
-/* --- HEADERS (HERO SECTIONS) --- */
+/* Headers / Hero */
 .page-header {
-    height: 50vh; /* Altura estándar */
+    height: 50vh;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -49,93 +137,80 @@ a { text-decoration: none; }
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 70px; /* Espacio para la navbar fija */
+    margin-top: 76px;
 }
-
-/* Altura especial para el Home */
 .home-hero { height: 85vh; }
-
 .header-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(12, 44, 104, 0.85), rgba(12, 44, 104, 0.6));
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(10, 37, 88, 0.9), rgba(10, 37, 88, 0.6));
     z-index: 0;
 }
-
 .header-content { position: relative; z-index: 1; }
-.header-content h1, .header-content p { color: white !important; }
+/* Separación del botón en el header */
+.header-content .btn-corporate-gold { margin-top: 3.5rem; }
 
-/* --- TARJETAS DE SERVICIOS (HOME & QUÉ HACEMOS) --- */
-.service-card {
-    border: none;
-    border-top: 4px solid var(--primary-blue);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    height: 100%; /* Igualar alturas */
+/* --- CORRECCIÓN: TEXTO BLANCO EN PORTADAS --- */
+/* Esto fuerza a que cualquier título o texto dentro del header sea blanco, 
+   ignorando la regla general del color azul */
+
+.page-header h1,
+.page-header h2,
+.page-header p,
+.page-header span,
+.page-header .lead {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra negra suave para que se lea mejor */
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    border-top-color: var(--gold-accent);
+/* Ajuste específico para el botón dorado en el header */
+.page-header .btn-corporate-gold {
+    color: #ffffff !important; /* Texto del botón blanco */
+    margin-top: 2rem; /* Separación del texto */
 }
 
-.icon-box {
-    font-size: 2.5rem;
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
-}
-
-/* --- EQUIPO (QUIÉNES SOMOS) --- */
-.team-card {
-    border: none;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.team-card:hover { transform: translateY(-5px); }
-.team-img-wrapper { height: 250px; overflow: hidden; }
-.team-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-.team-card:hover img { transform: scale(1.05); }
-
-.notary-img {
-    border-radius: 8px;
-    box-shadow: 15px 15px 0 var(--primary-blue);
-}
-
-/* --- CONTACTO & EXTRAS --- */
-.contact-section { background-color: var(--primary-blue); color: white; }
-.contact-section h2 { color: white; }
-
-.btn-primary-custom {
-    background-color: white;
-    color: var(--primary-blue);
-    font-weight: 600;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-.btn-primary-custom:hover {
-    background-color: var(--gold-accent);
-    color: var(--primary-blue);
-    transform: translateY(-2px);
-}
-
-/* Utilidades de texto */
-.text-gold { color: var(--gold-accent) !important; }
-.bg-light-custom { background-color: #f8f9fa; }
-
-/* --- ESTILOS PARA EL LOGO OIRS (INDEX) --- */
-.oirs-logo {
-    width: 150px; /* Tamaño controlado del logo */
-    height: auto;
+/* Logos de Acción (Index) */
+.action-logo {
+    width: 110px; height: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
-    filter: grayscale(20%); /* Un poco gris para que al pasar el mouse brille */
+    filter: grayscale(100%); opacity: 0.7;
+}
+.action-logo:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%) drop-shadow(0 4px 10px rgba(212, 175, 55, 0.4));
+    opacity: 1;
 }
 
-.oirs-logo:hover {
-    transform: scale(1.1); /* Crece un poco */
-    filter: grayscale(0%) drop-shadow(0 4px 10px rgba(212, 175, 55, 0.4)); /* Brillo dorado */
+/* Divisor vertical (Desktop) */
+@media (min-width: 768px) {
+    .divider-vertical { border-right: 1px solid #e0e0e0; }
+}
+
+/* Footer */
+footer {
+    background-color: var(--notary-blue) !important;
+    color: white;
+    border-top: 5px solid var(--notary-gold);
+}
+
+/* =========================================
+   6. PESTAÑAS (CONTACTO)
+   ========================================= */
+.nav-tabs .nav-link {
+    color: var(--notary-blue) !important;
+    font-weight: 600;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    margin-right: 4px;
+    border-radius: 5px 5px 0 0;
+}
+.nav-tabs .nav-link:hover {
+    color: var(--notary-gold) !important;
+    background-color: #fff;
+}
+.nav-tabs .nav-link.active {
+    color: var(--notary-gold) !important;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    border-top: 3px solid var(--notary-gold);
 }
