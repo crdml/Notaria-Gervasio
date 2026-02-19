@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/ico">"
 </head>
 <body>
 
@@ -210,7 +211,7 @@
                             <i class="fa-solid fa-phone fs-4 text-gold me-3 mt-1"></i>
                             <div>
                                 <h5 class="fw-bold">Llámenos</h5>
-                                <p class="mb-0"><a href="tel:+56322680456">Mesa Central: +56 32 268 0456</a></p>
+                                <p class="mb-0"><a href="tel:+56323186925">Central: +56 32 318 6925</a></p>
                             </div>
                         </div>
 
@@ -252,52 +253,85 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Función genérica para enviar formulario
-        function enviarFormulario(formId, btnId, successId) {
-            const form = document.getElementById(formId);
-            const btn = document.getElementById(btnId);
-            const successMsg = document.getElementById(successId);
+    /**
+     * Función para procesar y enviar formularios a través de FormSubmit.co
+     * @param {string} formId - ID del elemento <form>
+     * @param {string} btnId - ID del botón de envío
+     * @param {string} successId - ID del div con el mensaje de éxito
+     * @param {string} emailPrincipal - Correo principal (Destinatario)
+     * @param {string} emailsCC - Correos en copia (separados por coma si son varios)
+     */
+    function enviarFormulario(formId, btnId, successId, emailPrincipal, emailsCC) {
+        const form = document.getElementById(formId);
+        const btn = document.getElementById(btnId);
+        const successMsg = document.getElementById(successId);
 
-            form.addEventListener("submit", function(e) {
-                e.preventDefault(); // Evita que la página se recargue
+        if (!form) return;
 
-                // Cambiar botón a estado "Enviando..."
-                const textoOriginal = btn.innerHTML;
-                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-                btn.disabled = true;
+        form.addEventListener("submit", function(e) {
+            e.preventDefault(); // Evita la recarga de la página
 
-                // Capturar datos
-                const formData = new FormData(form);
-                
-                // Enviar a FormSubmit usando AJAX (fetch)
-                fetch("https://formsubmit.co/ajax/jotamntzk@gmail.com", {
-                    method: "POST",
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(Object.fromEntries(formData))
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Si todo sale bien:
-                    form.reset(); // Limpiar campos
-                    form.classList.add("d-none"); // Ocultar formulario
-                    successMsg.classList.remove("d-none"); // Mostrar mensaje de éxito
-                })
-                .catch(error => {
-                    console.log(error);
-                    alert("Hubo un error al enviar. Por favor intente nuevamente.");
-                    btn.innerHTML = textoOriginal;
-                    btn.disabled = false;
-                });
+            // Cambiar botón a estado "Enviando..."
+            const textoOriginal = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+
+            // Capturar datos del formulario
+            const formData = new FormData(form);
+            
+            // Si hay correos secundarios, los agregamos como campo oculto de Copia (_cc)
+            if (emailsCC) {
+                formData.append("_cc", emailsCC);
+            }
+            
+            // Enviar a FormSubmit usando AJAX al correo principal
+            fetch(`https://formsubmit.co/ajax/${emailPrincipal}`, {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Éxito
+                form.reset(); 
+                form.classList.add("d-none"); 
+                successMsg.classList.remove("d-none"); 
+            })
+            .catch(error => {
+                // Error
+                console.error(error);
+                alert("Hubo un error al enviar. Por favor intente nuevamente.");
+                btn.innerHTML = textoOriginal;
+                btn.disabled = false;
             });
-        }
+        });
+    }
 
-        // Activar para ambos formularios
-        enviarFormulario("form-general", "btn-general", "success-general");
-        enviarFormulario("form-oirs", "btn-oirs", "success-oirs");
-    </script>
+    // ==========================================
+    // CONFIGURACIÓN DE ENVÍOS A MÚLTIPLES CORREOS
+    // ==========================================
+
+    // 1. Formulario Consulta General
+    enviarFormulario(
+        "form-general", 
+        "btn-general", 
+        "success-general", 
+        "notaria@notariagervasio.cl",     // Correo Principal
+        "notario@notariagervasio.cl"      // Correo en Copia
+    );
+
+    // 2. Formulario OIRS
+    enviarFormulario(
+        "form-oirs", 
+        "btn-oirs", 
+        "success-oirs", 
+        "notario@notariagervasio.cl",     // Correo Principal
+        "notaria@notariagervasio.cl"      // Correo en Copia
+    );
+</script>
 
 </body>
 </html>
