@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/ico">"
+    <link rel="icon" href="assets/favicon.ico" type="image/ico">
 </head>
 <body>
 
@@ -96,7 +96,21 @@
                                                     <label>Correo Electrónico</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="tel" 
+                                                           class="form-control" 
+                                                           name="telefono" 
+                                                           placeholder="9 1234 5678" 
+                                                           pattern="[0-9]{9}" 
+                                                           title="Debe ingresar 9 dígitos numéricos" 
+                                                           maxlength="9" 
+                                                           oninput="this.value = this.value.replace(/[^0-9]/g, '');" 
+                                                           required>
+                                                    <label>Teléfono (Ej: 9 1234 5678)</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <div class="form-floating">
                                                     <select class="form-select" name="asunto">
                                                         <option selected>Consulta General</option>
@@ -165,8 +179,16 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <input type="tel" class="form-control" name="telefono" placeholder="Teléfono" required>
-                                                    <label>Teléfono</label>
+                                                    <input type="tel" 
+                                                           class="form-control" 
+                                                           name="telefono" 
+                                                           placeholder="9 1234 5678" 
+                                                           pattern="[0-9]{9}" 
+                                                           title="Debe ingresar 9 dígitos numéricos" 
+                                                           maxlength="9" 
+                                                           oninput="this.value = this.value.replace(/[^0-9]/g, '');" 
+                                                           required>
+                                                    <label>Teléfono (Ej: 9 1234 5678)</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
