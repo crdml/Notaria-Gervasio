@@ -89,7 +89,9 @@ a:hover { color: var(--notary-gold); }
 .bg-corporate-blue .font-playfair,
 .bg-corporate-blue p,
 .bg-corporate-blue a,
-.bg-corporate-blue div {
+.bg-corporate-blue div,
+.bg-corporate-blue span,
+.bg-corporate-blue li {
     color: #ffffff !important;
 }
 
@@ -213,4 +215,25 @@ footer {
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
     border-top: 3px solid var(--notary-gold);
+}
+
+/* --- ESTILOS PARA EL CARRUSEL --- */
+#carouselBuenosActos .carousel-caption {
+    bottom: 20px;
+    left: 10%;
+    right: 10%;
+    border-bottom: 3px solid var(--notary-gold);
+}
+
+#carouselBuenosActos .carousel-indicators [data-bs-target] {
+    background-color: var(--notary-gold);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+#carouselBuenosActos .carousel-control-prev-icon,
+#carouselBuenosActos .carousel-control-next-icon {
+    filter: invert(72%) sepia(54%) saturate(464%) hue-rotate(5deg) brightness(94%) contrast(87%);
 }
