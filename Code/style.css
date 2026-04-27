@@ -237,3 +237,28 @@ footer {
 #carouselBuenosActos .carousel-control-next-icon {
     filter: invert(72%) sepia(54%) saturate(464%) hue-rotate(5deg) brightness(94%) contrast(87%);
 }
+
+/* =========================================
+   7. AJUSTES RESPONSIVOS (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Achicar el título principal en celulares */
+    .page-header h1.display-3 {
+        font-size: 2.2rem !important;
+    }
+    
+    /* Ajustar la medalla para que no se vea apretada ni se corte mal */
+    .page-header .badge {
+        font-size: 0.85rem !important;
+        padding: 8px 15px !important;
+        white-space: normal; /* Permite que el texto baje suavemente si es necesario */
+        line-height: 1.4;
+    }
+    
+    /* Ajustar el subtítulo para que acompañe el nuevo tamaño */
+    .page-header .lead {
+        font-size: 1rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
